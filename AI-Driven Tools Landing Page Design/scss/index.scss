@@ -2,15 +2,17 @@
 @use 'global';
 @use 'header';
 @use 'buttons';
+@use 'sign.in';
 
 body {
-    background-color: global.$background-color;
+    background-color: global.$background-color !important;
     // padding: 0 20px;
 
     header {
         display: flex;
         justify-content: center;
         margin-top: 1em;
+
         .bg-body {
             background: header.$nav-gradient !important;
             -webkit-backdrop-filter: blur(8px);
@@ -48,8 +50,10 @@ body {
             z-index: -1;
             /* place behind navbar content */
         }
-        .ctas{
+
+        .ctas {
             align-items: center;
+
         }
 
         .sign-in {
@@ -90,7 +94,6 @@ body {
 
     }
 
-
-
+   
 
 }
