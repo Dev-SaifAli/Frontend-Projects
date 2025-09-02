@@ -1,3 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #030712;
+  padding: 20px;
+}
+body .navbar {
+  background: linear-gradient(to bottom, #111827 0%, rgba(31, 41, 55, 0.4941176471) 54%, #111827 100%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  width: 1024px;
+  height: 56px;
+}
+body .navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom, #1F2937 0%, #374151 50%, #1F2937 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  /* so clicks go through */
+  z-index: -1;
+  /* place behind navbar content */
 }/*# sourceMappingURL=index.css.map */

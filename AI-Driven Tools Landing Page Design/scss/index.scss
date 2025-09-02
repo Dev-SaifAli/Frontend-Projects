@@ -1,5 +1,46 @@
 @use 'variables';
+@use 'global';
+@use 'header';
 
 body {
-    background-color: variables.$background-color;
+    background-color: global.$background-color;
+    padding: 20px;
+
+    .navbar {
+        background: header.$nav-gradient;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+
+        border-radius: 16px;
+        // position: relative;
+        // padding: ;
+        // z-index: 1;
+        width: 1024px;
+        height: 56px;
+    }
+
+    .navbar::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: header.$nav-stroke;
+
+        -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        /* so clicks go through */
+        z-index: -1;
+        /* place behind navbar content */
+    }
+
+
+
 }
