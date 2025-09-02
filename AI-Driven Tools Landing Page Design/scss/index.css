@@ -4,25 +4,54 @@
   box-sizing: border-box;
 }
 
+.sign-in {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+  width: 72px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.register {
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+  width: 80px;
+  height: 34px;
+  border-radius: 8px;
+}
+
 body {
   background-color: #030712;
-  padding: 20px;
 }
-body .navbar {
-  background: linear-gradient(to bottom, #111827 0%, rgba(31, 41, 55, 0.4941176471) 54%, #111827 100%);
+body header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+body header .bg-body {
+  background: linear-gradient(135deg, #111827 0%, rgba(31, 41, 55, 0.4941176471) 54%, #111827 100%) !important;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-radius: 16px;
-  width: 1024px;
+  position: relative;
+  z-index: 1;
+  width: 70%;
   height: 56px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1px;
+  align-items: center;
+  color: white !important;
 }
-body .navbar::before {
+body header .navbar::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(to bottom, #1F2937 0%, #374151 50%, #1F2937 100%);
+  background: linear-gradient(135deg, #1F2937 0%, #374151 50%, #1F2937 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -31,4 +60,32 @@ body .navbar::before {
   /* so clicks go through */
   z-index: -1;
   /* place behind navbar content */
+}
+body header .ctas {
+  align-items: center;
+}
+body header .sign-in {
+  background: linear-gradient(to top, rgba(31, 41, 55, 0.6392156863) 0%, #1F2937 100%);
+  color: white !important;
+  position: relative;
+  z-index: 1;
+}
+body header .sign-in::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 0.8px;
+  background: linear-gradient(135deg, #1F2937 0%, #4B5563 50%, #1F2937 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+body header .register {
+  background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%);
+  color: white !important;
+  box-shadow: inset 0px 1px 0 rgba(255, 255, 255, 0.6862745098);
 }/*# sourceMappingURL=index.css.map */

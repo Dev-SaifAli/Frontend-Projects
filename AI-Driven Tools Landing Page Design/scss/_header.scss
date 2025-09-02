@@ -1,2 +1,8 @@
-$nav-gradient : linear-gradient(to bottom, #111827 0%, #1f29377e 54%, #111827 100%);
-$nav-stroke : linear-gradient(to bottom, #1F2937 0%, #374151 50%, #1F2937 100%)
+$nav-gradient : linear-gradient(135deg, #111827 0%, #1f29377e 54%, #111827 100%);
+$nav-stroke : linear-gradient(135deg, #1F2937 0%, #374151 50%, #1F2937 100%);
+
+// CTAs buttons
+$signIn-bg : linear-gradient(to top, #1F2937A3 0%, #1F2937 100%);
+$register-bg: linear-gradient(to top, #4F46E5 0%, #6366F1 100%);
+// CTAs stroke
+$singIn-stroke : linear-gradient(135deg, #1F2937 0%, #4B5563 50%, #1F2937 100%);
