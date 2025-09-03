@@ -1,0 +1,127 @@
+@use 'variables';
+// @use 'buttons';
+@use 'header';
+
+
+
+
+.links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    gap: 32px;
+
+}
+
+body {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
+    background-image: url(../assets/Sign-up\ BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: variables.$font-family-nav;
+
+    main {
+        h1 {
+            font-family: "Nacelle", sans-serif !important;
+            color: white;
+        }
+
+        .form-content {
+            margin-top: 80px;
+            // margin: 0 auto;
+            width: 400px;
+        }
+
+        .form-section {
+
+            label {
+                color: #838997;
+                font-style: variables.$font-style-nav;
+
+            }
+
+            .input-wrapper {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    border-radius: 8px;
+                    padding: 1.5px;
+                    background: variables.$field-stroke;
+                    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                }
+
+                &:focus-within::before {
+                    opacity: 1;
+                }
+
+                ::placeholder {
+                    color: #374151 !important;
+                }
+
+                .form-control {
+                    background: variables.$field-fill;
+                    border-radius: 8px;
+                    height: 44px;
+                    color: #374151;
+                    font-size: 14px;
+                    border: none !important;
+                    box-shadow: none !important;
+
+                    &:focus {
+                        border: none !important;
+                        box-shadow: none !important;
+                        outline: none !important;
+                    }
+
+
+                }
+            }
+
+            .register {
+                background: header.$register-bg !important;
+                color: white !important;
+                // box-shadow: inset 0px 1px 0 #ffffffaf;
+
+            }
+
+            .sign-up {
+                background: header.$signIn-bg !important;
+                color: white;
+
+
+            }
+
+            p {
+                margin: 0;
+            }
+
+            a {
+                color: #6366F1;
+                transition: 0.2s ease;
+
+                &:hover {
+                    text-decoration: underline !important;
+                    text-decoration-color: #fff !important;
+                }
+
+            }
+
+        }
+
+
+    }
+}

@@ -1,2 +1,13 @@
 $font-family-nav: "Inter", sans-serif;
 $font-style-nav: medium;
+
+@font-face {
+    font-family: 'Nacelle';
+    /* Choose a descriptive name for your font */
+    src: url('../fonts/Nacelle-SemiBold.otf') format('opentype');
+
+}
+
+// form fields
+$field-fill : linear-gradient(135deg, #111827 0%, #1f29377e 54%, #111827 100%);
+$field-stroke: linear-gradient(135deg, #1F2937E0 0%, #374151 50%, #1F2937E0 100%)

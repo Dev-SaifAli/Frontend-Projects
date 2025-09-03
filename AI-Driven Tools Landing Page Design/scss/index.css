@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Nacelle";
+  /* Choose a descriptive name for your font */
+  src: url("../fonts/Nacelle-SemiBold.otf") format("opentype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -26,9 +31,87 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  font-family: "Inter", sans-serif;
-  font-style: medium;
   gap: 32px;
+}
+
+body {
+  background-image: url(../assets/Sign-up\ BG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Inter", sans-serif;
+}
+body main h1 {
+  font-family: "Nacelle", sans-serif !important;
+  color: white;
+}
+body main .form-content {
+  margin-top: 80px;
+  width: 400px;
+}
+body main .form-section label {
+  color: #838997;
+  font-style: medium;
+}
+body main .form-section .input-wrapper {
+  position: relative;
+}
+body main .form-section .input-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8784313725) 0%, #374151 50%, rgba(31, 41, 55, 0.8784313725) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+body main .form-section .input-wrapper:focus-within::before {
+  opacity: 1;
+}
+body main .form-section .input-wrapper ::-moz-placeholder {
+  color: #374151 !important;
+}
+body main .form-section .input-wrapper ::placeholder {
+  color: #374151 !important;
+}
+body main .form-section .input-wrapper .form-control {
+  background: linear-gradient(135deg, #111827 0%, rgba(31, 41, 55, 0.4941176471) 54%, #111827 100%);
+  border-radius: 8px;
+  height: 44px;
+  color: #374151;
+  font-size: 14px;
+  border: none !important;
+  box-shadow: none !important;
+}
+body main .form-section .input-wrapper .form-control:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+body main .form-section .register {
+  background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%) !important;
+  color: white !important;
+}
+body main .form-section .sign-up {
+  background: linear-gradient(to top, rgba(31, 41, 55, 0.6392156863) 0%, #1F2937 100%) !important;
+  color: white;
+}
+body main .form-section p {
+  margin: 0;
+}
+body main .form-section a {
+  color: #6366F1;
+  transition: 0.2s ease;
+}
+body main .form-section a:hover {
+  text-decoration: underline !important;
+  text-decoration-color: #fff !important;
 }
 
 body {
@@ -44,7 +127,7 @@ body header .bg-body {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-radius: 16px;
-  position: relative;
+  position: fixed;
   z-index: 1;
   width: 70%;
   height: 56px;
@@ -94,7 +177,7 @@ body header .sign-in::before {
   z-index: -1;
 }
 body header .register {
-  background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%);
+  background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%) !important;
   color: white !important;
   box-shadow: inset 0px 1px 0 rgba(255, 255, 255, 0.6862745098);
 }/*# sourceMappingURL=index.css.map */
