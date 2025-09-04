@@ -111,7 +111,7 @@ body main .form-section a {
 }
 body main .form-section a:hover {
   text-decoration: underline !important;
-  text-decoration-color: #fff !important;
+  text-decoration-color: white !important;
 }
 
 body {
