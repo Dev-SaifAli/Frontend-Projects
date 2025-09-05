@@ -21,18 +21,33 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body navbar-dark">
+
             <div class="container">
+                <!-- Logo/Brand -->
                 <a class="navbar-brand" href="#">
                     <img src="./assets/Logo.svg" alt="logo" width="32" height="32">
                 </a>
 
-                <div class="d-flex ctas  ">
-                    <a href="./Sign in.html"><button class="btn sign-in mx-2">Sign In</button></a>
-                    <a href="./Sign up.html"><button class="btn register">Register</button></a>
+                <!-- Hamburger toggle button (visible only on mobile) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <!-- Collapsible content (includes navigation items and CTAs) -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <!-- Your navigation items would go here -->
+
+                    <!-- CTA buttons - ms-auto pushes them to the right -->
+                    <div class="d-flex ms-auto">
+                        <a href="./Sign in.html" class="btn sign-in mx-2">Sign In</a>
+                        <a href="./Sign up.html" class="btn register">Register</a>
+                    </div>
                 </div>
-
             </div>
+
+
+
         </nav>
 
 

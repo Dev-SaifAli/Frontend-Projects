@@ -3,17 +3,19 @@
 @use 'header';
 @use 'buttons';
 @use 'sign-up';
+@use 'media-queries';
 
 body {
     background-color: global.$background-color !important;
     // padding: 0 20px;
 
     header {
-            display: flex;
-            justify-content: center;
+        // place the overall navbar in center.
+        display: flex;
+        justify-content: center;
         margin-top: 1em;
 
-        .bg-body {
+        .navbar {
             background: header.$nav-gradient !important;
             -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
@@ -22,9 +24,8 @@ body {
             z-index: 1;
             width: 70%;
             height: 56px;
-            display: flex;
-            justify-content: space-between;
-            padding: 1px;
+
+            padding: 10px;
             align-items: center;
             color: white !important;
         }
@@ -53,6 +54,7 @@ body {
 
         .ctas {
             align-items: center;
+
 
         }
 
@@ -83,6 +85,7 @@ body {
             z-index: -1;
 
         }
+
 
 
         .register {

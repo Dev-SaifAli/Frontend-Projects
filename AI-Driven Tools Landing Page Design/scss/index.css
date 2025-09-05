@@ -114,6 +114,18 @@ body main .form-section a:hover {
   text-decoration-color: white !important;
 }
 
+/* Very small devices */
+@media (max-width: 480px) {
+  body {
+    background-size: cover; /* Or 'cover' based on your preference */
+  }
+}
+/* Tablet devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    background-position: center top;
+  }
+}
 body {
   background-color: #030712 !important;
 }
@@ -122,7 +134,7 @@ body header {
   justify-content: center;
   margin-top: 1em;
 }
-body header .bg-body {
+body header .navbar {
   background: linear-gradient(135deg, #111827 0%, rgba(31, 41, 55, 0.4941176471) 54%, #111827 100%) !important;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -131,9 +143,7 @@ body header .bg-body {
   z-index: 1;
   width: 70%;
   height: 56px;
-  display: flex;
-  justify-content: space-between;
-  padding: 1px;
+  padding: 10px;
   align-items: center;
   color: white !important;
 }
