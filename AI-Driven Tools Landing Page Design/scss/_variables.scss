@@ -10,4 +10,15 @@ $font-style-nav: medium;
 
 // form fields
 $field-fill : linear-gradient(135deg, #111827 0%, #1f29377e 54%, #111827 100%);
-$field-stroke: linear-gradient(135deg, #1F2937E0 0%, #374151 50%, #1F2937E0 100%)
+$field-stroke: linear-gradient(135deg, #1F2937E0 0%, #374151 50%, #1F2937E0 100%);
+
+$primary-color: #E7EAED;
+$secondary-color: #7D86A2;
+
+// Hero section buttons
+$hero-btn-1: linear-gradient(to top, #4F46E5 0%, #6366F1 100%);
+$hero-btn-2: linear-gradient(to bottom, #1F2937A3 0%, #1F2937 100%);
+$hero-btn-2-stroke : linear-gradient(135deg, #1f2937 0%, #4B5563 50%, #1F2937 100%);
+
+// Section text color
+$section-text-color: linear-gradient(to right, #6366F1 0%, #C7D2FE 100%);

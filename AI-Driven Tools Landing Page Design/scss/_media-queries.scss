@@ -12,3 +12,90 @@
     background-position: center top;
   }
 }
+
+// Define your breakpoints
+$sm: 576px; // Small devices
+$md: 768px; // Medium devices
+$lg: 992px; // Large devices
+$xl: 1200px; // Extra large devices
+$xxl: 1400px; // Extra extra large devices
+
+// Mixin for large devices and down (max-width)
+@mixin media-breakpoint-down($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Apply styles
+#navbarSupportedContent {
+  // Default styles for navbar content
+
+  // Styles for screens smaller than lg (991px and below)
+  @include media-breakpoint-down($lg) {
+
+    ul {
+
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 0.5rem;
+      gap: 10px;
+
+      li {
+        .nav-item {
+          margin: 0.25rem 0;
+        }
+
+        .nav-link {
+          padding: 0.5rem 1rem;
+          transition: all 0.3s ease;
+          border-radius: 6px;
+          margin: 0 2px;
+        }
+
+        .nav-link.active {
+          color: black;
+          background-color: rgba(79, 70, 229, 0.1);
+
+
+        }
+
+        .nav-link:hover {
+          background-color: rgba(79, 70, 229, 0.1);
+        }
+
+
+        a {
+          color: black;
+        }
+
+        transition: all 0.9s ease-in;
+
+        :hover {
+          background-color: rgba(79, 70, 229, 0.1);
+          color: #4f46e5;
+
+        }
+      }
+
+    }
+
+
+
+
+    .ctas {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+
+
+
+  }
+}

@@ -45,6 +45,9 @@ body main h1 {
   font-family: "Nacelle", sans-serif !important;
   color: white;
 }
+body main .navbar-collapse {
+  transition: height 0.3s ease;
+}
 body main .form-content {
   margin-top: 80px;
   width: 400px;
@@ -111,7 +114,7 @@ body main .form-section a {
 }
 body main .form-section a:hover {
   text-decoration: underline !important;
-  text-decoration-color: white !important;
+  text-decoration-color: #4547ab !important;
 }
 
 /* Very small devices */
@@ -127,8 +130,54 @@ body main .form-section a:hover {
     background-position: center top;
   }
 }
+@media (max-width: 992px) {
+  #navbarSupportedContent ul {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    gap: 10px;
+  }
+  #navbarSupportedContent ul li {
+    transition: all 0.9s ease-in;
+  }
+  #navbarSupportedContent ul li .nav-item {
+    margin: 0.25rem 0;
+  }
+  #navbarSupportedContent ul li .nav-link {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    margin: 0 2px;
+  }
+  #navbarSupportedContent ul li .nav-link.active {
+    color: black;
+    background-color: rgba(79, 70, 229, 0.1);
+  }
+  #navbarSupportedContent ul li .nav-link:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+  }
+  #navbarSupportedContent ul li a {
+    color: black;
+  }
+  #navbarSupportedContent ul li :hover {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: #4f46e5;
+  }
+  #navbarSupportedContent .ctas {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
 body {
   background-color: #030712 !important;
+  max-height: 100vh;
 }
 body header {
   display: flex;
@@ -191,4 +240,87 @@ body header .register {
   background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%) !important;
   color: white !important;
   box-shadow: inset 0px 1px 0 rgba(255, 255, 255, 0.6862745098);
+}
+body main .hero-section {
+  padding: 60px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main .hero-section h1 {
+  font-size: 48px;
+  color: #E7EAED !important;
+}
+body main .hero-section p {
+  font-size: 16px;
+  color: #7D86A2 !important;
+  line-height: 30px;
+}
+body main .hero-section .ctas {
+  gap: 10px;
+}
+body main .hero-section .ctas .hero-btn-1 {
+  background: linear-gradient(to top, #4F46E5 0%, #6366F1 100%) !important;
+  width: 146px;
+  height: 46px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+}
+body main .hero-section .ctas .hero-btn-1:hover {
+  box-shadow: 0 6px 12px rgba(78, 70, 229, 0.3);
+}
+body main .hero-section .ctas .hero-btn-2 {
+  background: linear-gradient(to bottom, rgba(31, 41, 55, 0.6392156863) 0%, #1F2937 100%) !important;
+  width: 142px;
+  height: 44px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+body main .hero-section .ctas .hero-btn-2:hover {
+  box-shadow: 0 6px 12px rgba(82, 110, 149, 0.3);
+}
+body main .hero-section .ctas .hero-btn-2::before {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #1f2937 0%, #4B5563 50%, #1F2937 100%);
+  inset: 0;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  /* so clicks go through */
+  z-index: -1;
+  /* place behind navbar content */
+}
+body main .hero-section .hero-image {
+  width: 75%;
+  height: 576px;
+  border-radius: 16px;
+  background-image: url(../assets/Video.png);
+  background-position: center;
+}
+body main .hero-section .section-text {
+  background: linear-gradient(to right, #6366F1 0%, #C7D2FE 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+  font-size: 14px;
 }/*# sourceMappingURL=index.css.map */

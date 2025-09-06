@@ -7,7 +7,8 @@
 
 body {
     background-color: global.$background-color !important;
-    // padding: 0 20px;
+    max-height: 100vh;
+
 
     header {
         // place the overall navbar in center.
@@ -92,6 +93,117 @@ body {
             background: header.$register-bg !important;
             color: white !important;
             box-shadow: inset 0px 1px 0 #ffffffaf;
+        }
+
+
+    }
+
+    main {
+
+        .hero-section {
+            padding: 60px 0;
+            text-align: center;
+
+
+
+            h1 {
+                font-size: 48px;
+                color: variables.$primary-color !important;
+            }
+
+            p {
+                font-size: 16px;
+                color: variables.$secondary-color !important;
+                line-height: 30px;
+            }
+
+            .ctas {
+                gap: 10px;
+
+                .hero-btn-1 {
+                    background: variables.$hero-btn-1 !important;
+                    width: 146px;
+                    height: 46px;
+                    padding: 11px 16px;
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 14px;
+                    font-family: variables.$font-family-nav ;
+                    font-style: variables.$font-style-nav;
+
+                    &:hover {
+                        box-shadow: 0 6px 12px rgba(78, 70, 229, 0.3);
+                    }
+
+                }
+
+                .hero-btn-2 {
+                    background: variables.$hero-btn-2 !important;
+                    width: 142px;
+                    height: 44px;
+                    padding: 11px 16px;
+                    border-radius: 8px;
+                    color: white;
+                    font-size: 14px;
+                    font-family: variables.$font-family-nav ;
+                    font-style: variables.$font-style-nav;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        // box-shadow: variables.$field-stroke !important;
+                        box-shadow: 0 6px 12px rgba(#526e95, 0.3);
+                    }
+                }
+
+                .hero-btn-2::before {
+                    content: "";
+                    position: absolute;
+                    border-radius: inherit;
+                    padding: 1px;
+                    background: variables.$hero-btn-2-stroke;
+                    inset: 0;
+                    -webkit-mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
+                    pointer-events: none;
+                    /* so clicks go through */
+                    z-index: -1;
+                    /* place behind navbar content */
+
+                }
+            }
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .hero-image {
+
+                width: 75%;
+                height: 576px;
+                border-radius: 16px;
+                background-image: url(../assets/Video.png);
+                background-position: center;
+            }
+
+            .section-text {
+                background: variables.$section-text-color;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                font-family: variables.$font-family-nav ;
+                font-style: variables.$font-style-nav;
+                font-size: 14px;
+            }
+
         }
 
 
