@@ -23,36 +23,54 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body navbar-dark">
-
-            <div class="container">
-                <!-- Logo/Brand -->
+            <div class=" container">
                 <a class="navbar-brand" href="#">
                     <img src="./assets/Logo.svg" alt="logo" width="32" height="32">
                 </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Font Awesome icons (initially hidden) -->
 
+                    <!-- <span id="toggler" class="navbar-toggler-icon"></span> -->
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 links ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Help Center</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Resources
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
 
-                <!-- Hamburger toggle button (visible only on mobile) -->
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    </ul>
+                    <div class="d-flex ctas  ">
+                        <a href="./Sign in.html"><button class="btn sign-in mx-2">Sign In</button></a>
 
-
-                </button> -->
-
-
-                <!-- Collapsible content (includes navigation items and CTAs) -->
-                <!-- <div class="collapse navbar-collapse" id="navbarContent"> -->
-                <!-- Your navigation items would go here -->
-
-                <!-- CTA buttons - ms-auto pushes them to the right -->
-                <div class="d-flex ms-auto">
-                    <a href="./Sign in.html" class="btn sign-in mx-2">Sign In</a>
-                    <a href="./Sign up.html" class="btn register">Register</a>
+                        <button class="btn register">Register</button>
+                    </div>
                 </div>
-                <!-- </div> -->
             </div>
-
-
-
         </nav>
 
 
@@ -61,26 +79,128 @@
 
     <main>
         <!-- Hero section -->
-        <div class="container hero-section my-5">
-            <h1>AI-driven tools for product teams</h1>
+        <div class="container hero-section d-flex justify-content-center align-items-center flex-column">
+            <h1 class="mt-5 pt-5">AI-driven tools for product teams</h1>
             <p>Our landing page template works on all devices, so you only have to set it up once, <br> and get
                 beautiful
                 results forever.</p>
-            <div class="d-flex ctas my-4 justify-content-center align-items-center">
+            <div class="d-flex ctas  justify-content-center align-items-center">
                 <button class="btn hero-btn-1">Start Building <i class="fa-solid fa-arrow-right fa-fade "></i></button>
                 <button class="btn hero-btn-2">Schedule Demo</button>
 
             </div>
-            <div class="hero-image mt-4">
+
+
+            <div class="hero-video my-5 ">
+                <div class="hero-content d-flex justify-content-center align-items-center ">
+                    <div class="play-btn">
+                        <button class="openVideoBtn btn" data-video="./assets/video.mp4"><span
+                                class="relative d-flex items-center gap-3  video-play-btn ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+                                    <path fill="url(#pla)" fill-rule="evenodd"
+                                        d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10Zm3.5-10-5-3.5v7l5-3.5Z"
+                                        clip-rule="evenodd"></path>
+                                    <defs>
+                                        <linearGradient id="pla" x1="10" x2="10" y1="0" y2="20"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#6366F1"></stop>
+                                            <stop offset="1" stop-color="#6366F1" stop-opacity=".72"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <span class="text-sm font-medium leading-tight text-white">Watch Demo<span
+                                        class="text-gray-600"> - </span>3:47</span>
+                            </span></button>
+
+                    </div>
+                    <div id="fullscreenModal" class="fullscreen-modal">
+                        <span id="closeFullscreen">&times;</span>
+                        <video id="fullscreenVideo" controls>
+
+                        </video>
+                    </div>
+
+
+
+                </div>
+
+
 
             </div>
 
-            <section class="tailored-workflows">
-                <i><img src="./assets/Divider.png"></i><span class="section-text">Tailored
-                    Workflows</span><i><img src="./assets/Divider.png">
+            <section class="tailored-workflows ">
+                <div class="hr-with-text">
+
+                    <span class="section-text text-center">Tailored
+                        Workflows</span>
+
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center flex-column">
+
+                    <h2>Map your product journey</h2>
+                    <p class="text-center">Simple and elegant interface to start collaborating with your team in
+                        minutes. It
+                        seamlessly
+                        <br>integrates with your code and your favorite programming languages.
+                    </p>
+                </div>
 
             </section>
-        </div>
+
+            <!-- Tabs section -->
+            <section class="cards-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <img src="./assets/Icon.png" width="32" height="32" class="d-block ms-auto" alt="icon">
+                                <!-- <img src=" ./assets/Main 01.svg" alt="card-image"> -->
+                                <button class="btn">Built-in Tools</button>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card’s content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
     </main>
 
 
@@ -98,6 +218,7 @@
     <!-- Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js
 "></script>
+
 
     <!-- Custom JS -->
     <script src="./JS/index.js"></script>

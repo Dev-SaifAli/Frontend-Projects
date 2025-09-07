@@ -15,6 +15,10 @@ $field-stroke: linear-gradient(135deg, #1F2937E0 0%, #374151 50%, #1F2937E0 100%
 $primary-color: #E7EAED;
 $secondary-color: #7D86A2;
 
+//Divider
+$divider-right: linear-gradient(to right, #C7D2FE7A, #C7D2FE);
+$divider-left: linear-gradient(to left, #C7D2FE7A, #C7D2FE);
+
 // Hero section buttons
 $hero-btn-1: linear-gradient(to top, #4F46E5 0%, #6366F1 100%);
 $hero-btn-2: linear-gradient(to bottom, #1F2937A3 0%, #1F2937 100%);
@@ -22,3 +26,10 @@ $hero-btn-2-stroke : linear-gradient(135deg, #1f2937 0%, #4B5563 50%, #1F2937 10
 
 // Section text color
 $section-text-color: linear-gradient(to right, #6366F1 0%, #C7D2FE 100%);
+
+$hero-overlay : linear-gradient(135deg, #1118275c 0%, #6366F129 54%, #11182784 100%);
+
+// Cards section
+
+$card-bg: linear-gradient(135deg, #111827 0%, #1F29377A 54%, #1A2331AB 70%, #111827);
+$card-stroke: linear-gradient(135deg, #1F2937E3 0%, #374151 50%, #1F2937E3 100%);

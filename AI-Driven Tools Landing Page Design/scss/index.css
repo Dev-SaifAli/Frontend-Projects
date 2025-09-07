@@ -241,15 +241,17 @@ body header .register {
   color: white !important;
   box-shadow: inset 0px 1px 0 rgba(255, 255, 255, 0.6862745098);
 }
-body main .hero-section {
-  padding: 60px 0;
-  text-align: center;
+body main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+body main .hero-section {
+  text-align: center;
+}
 body main .hero-section h1 {
+  font-family: "Nacelle", Arial, Helvetica, sans-serif !important;
   font-size: 48px;
   color: #E7EAED !important;
 }
@@ -308,14 +310,101 @@ body main .hero-section .ctas .hero-btn-2::before {
   z-index: -1;
   /* place behind navbar content */
 }
-body main .hero-section .hero-image {
-  width: 75%;
-  height: 576px;
+body main .hero-section .hero-video {
   border-radius: 16px;
-  background-image: url(../assets/Video.png);
+  background-image: linear-gradient(135deg, rgba(17, 24, 39, 0.3607843137) 0%, rgba(99, 102, 241, 0.1607843137) 54%, rgba(17, 24, 39, 0.5176470588) 100%), url(../assets/hero-image-01.png);
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.6;
+  width: 1024px;
+  height: 576px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Overlay (same as before, but reusable) */
 }
-body main .hero-section .section-text {
+body main .hero-section .hero-video .hero-content .video-play-btn {
+  background-color: #080F24;
+  z-index: 2;
+  height: 40px;
+  width: 186px;
+  border-radius: 32px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-style: medium;
+  transition: all 0.3s ease-in-out;
+}
+body main .hero-section .hero-video:hover .hero-content .video-play-btn {
+  width: 196px;
+  cursor: pointer;
+}
+body main .hero-section .hero-video .fullscreen-modal {
+  display: none;
+  /* hidden initially */
+  position: fixed;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  border-radius: 16px;
+}
+body main .hero-section .hero-video .fullscreen-modal video {
+  width: 100%;
+  /* full viewport width */
+  height: 576px;
+  /* full viewport height */
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* keep video aspect ratio without cropping */
+  z-index: 9999;
+  transition: all 0.5s ease;
+}
+body main .hero-section .hero-video #closeFullscreen {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+body main .hero-section .tailored-workflows .hr-with-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .hero-section .tailored-workflows .hr-with-text::before {
+  content: "";
+  height: 1px;
+  background: linear-gradient(to left, rgba(199, 210, 254, 0.4784313725), #C7D2FE);
+  /* Set line color */
+  margin: 0 10px;
+  /* Add some space around the text */
+}
+body main .hero-section .tailored-workflows .hr-with-text::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(to right, rgba(199, 210, 254, 0.4784313725), #C7D2FE);
+  /* Set line color */
+  margin: 0 10px;
+  /* Add some space around the text */
+}
+body main .hero-section .tailored-workflows .hr-with-text::before,
+body main .hero-section .tailored-workflows .hr-with-text::after {
+  width: 32px;
+  flex-grow: 0;
+}
+body main .hero-section .tailored-workflows .hr-with-text span {
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+}
+body main .hero-section .tailored-workflows .section-text {
   background: linear-gradient(to right, #6366F1 0%, #C7D2FE 100%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -323,4 +412,20 @@ body main .hero-section .section-text {
   font-family: "Inter", sans-serif;
   font-style: medium;
   font-size: 14px;
+}
+body main .hero-section .tailored-workflows h2 {
+  color: #E7EAED !important;
+  font-size: 40px;
+}
+body main .hero-section .tailored-workflows p {
+  font-size: 16px;
+  color: #7D86A2 !important;
+  line-height: 30px;
+}
+body main .cards-section .card {
+  width: 352px !important;
+  height: 443px !important;
+  background: linear-gradient(135deg, #111827 0%, rgba(31, 41, 55, 0.4784313725) 54%, rgba(26, 35, 49, 0.6705882353) 70%, #111827) !important;
+  border-radius: 16px !important;
+  padding: 1rem;
 }/*# sourceMappingURL=index.css.map */

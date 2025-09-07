@@ -40,38 +40,65 @@
 //   timesIcon.style.display = "none";
 // });
 
-
 // Function to initialize navbar icon toggling
 function initNavbarIcons() {
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    
-    // Check if navbar toggler exists on this page
-    if (!navbarToggler) return;
-    
-    // Create icons if they don't exist
-    if (!navbarToggler.querySelector('.fa-bars')) {
-        navbarToggler.innerHTML = `
+  const navbarToggler = document.querySelector(".navbar-toggler");
+
+  // Check if navbar toggler exists on this page
+  if (!navbarToggler) return;
+
+  // Create icons if they don't exist
+  if (!navbarToggler.querySelector(".fa-bars")) {
+    navbarToggler.innerHTML = `
             <i class="fas fa-bars navbar-toggler-icon-fa" style="display: block;"></i>
             <i class="fas fa-times navbar-toggler-icon-fa" style="display: none;"></i>
         `;
-    }
-    
-    const barsIcon = navbarToggler.querySelector('.fa-bars');
-    const timesIcon = navbarToggler.querySelector('.fa-times');
-    const targetId = navbarToggler.getAttribute('data-bs-target');
-    const navbarContent = document.querySelector(targetId);
-    
-    // Use Bootstrap's collapse events
-    navbarContent.addEventListener('show.bs.collapse', function() {
-        barsIcon.style.display = 'none';
-        timesIcon.style.display = 'block';
-    });
-    
-    navbarContent.addEventListener('hide.bs.collapse', function() {
-        barsIcon.style.display = 'block';
-        timesIcon.style.display = 'none';
-    });
-}
+  }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initNavbarIcons);
+  const barsIcon = navbarToggler.querySelector(".fa-bars");
+  const timesIcon = navbarToggler.querySelector(".fa-times");
+  const targetId = navbarToggler.getAttribute("data-bs-target");
+  const navbarContent = document.querySelector(targetId);
+
+  // Use Bootstrap's collapse events
+  navbarContent.addEventListener("show.bs.collapse", function () {
+    barsIcon.style.display = "none";
+    timesIcon.style.display = "block";
+  });
+
+  navbarContent.addEventListener("hide.bs.collapse", function () {
+    barsIcon.style.display = "block";
+    timesIcon.style.display = "none";
+  });
+}
+const openBtns = document.querySelectorAll(".openVideoBtn");
+const modal = document.getElementById("fullscreenModal");
+const video = document.getElementById("fullscreenVideo");
+const closeBtn = document.getElementById("closeFullscreen");
+
+openBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const videoSrc = btn.dataset.video;
+    video.src = videoSrc;
+    modal.style.display = "flex";
+    video.play();
+    document.body.style.overflow = "hidden"; // disable background scrolling
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  video.pause();
+  video.src = ""; // reset video
+  document.body.style.overflow = "auto"; // re-enable scrolling
+});
+
+// Optional: click outside video closes modal
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    video.pause();
+    video.src = "";
+    document.body.style.overflow = "auto";
+  }
+});

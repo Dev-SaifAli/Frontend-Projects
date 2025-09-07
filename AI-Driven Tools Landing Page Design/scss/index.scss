@@ -99,16 +99,19 @@ body {
     }
 
     main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         .hero-section {
-            padding: 60px 0;
             text-align: center;
 
-
-
             h1 {
+                font-family: "Nacelle", Arial, Helvetica, sans-serif !important;
                 font-size: 48px;
                 color: variables.$primary-color !important;
+
             }
 
             p {
@@ -180,35 +183,179 @@ body {
                 }
             }
 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            .hero-image {
-
-                width: 75%;
-                height: 576px;
+            .hero-video {
                 border-radius: 16px;
-                background-image: url(../assets/Video.png);
+                background-image: variables.$hero-overlay , url(../assets/hero-image-01.png);
+                background-size: cover;
+                background-repeat: no-repeat;
                 background-position: center;
+                opacity: 0.6;
+                width: 1024px;
+                height: 576px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                .hero-content .video-play-btn {
+                    background-color: #080F24;
+                    z-index: 2;
+
+                    height: 40px;
+                    width: 186px;
+
+                    border-radius: 32px;
+                    justify-content: center;
+                    align-items: center;
+
+                    font-size: 14px;
+                    font-family: variables.$font-family-nav;
+                    font-style: variables.$font-style-nav ;
+                    transition: all 0.3s ease-in-out;
+
+                }
+
+                &:hover {
+                    .hero-content .video-play-btn {
+                        width: 196px;
+                        cursor: pointer;
+                    }
+
+
+                }
+
+                /* Overlay (same as before, but reusable) */
+                .fullscreen-modal {
+                    display: none;
+                    /* hidden initially */
+                    position: fixed;
+                    inset: 0;
+                    /* top:0; right:0; bottom:0; left:0 */
+                    background: rgba(0, 0, 0, 0.95);
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+
+                    border-radius: 16px;
+
+                    // transition: all 0.5s ease;
+                }
+
+                .fullscreen-modal video {
+                    width: 100%;
+                    /* full viewport width */
+                    height: 576px;
+                    /* full viewport height */
+                    object-fit: contain;
+                    /* keep video aspect ratio without cropping */
+                    z-index: 9999;
+                    transition: all 0.5s ease;
+                }
+
+                #closeFullscreen {
+                    position: absolute;
+                    top: 20px;
+                    right: 30px;
+                    font-size: 3rem;
+                    color: white;
+                    cursor: pointer;
+                    z-index: 10000;
+                }
+
+
             }
 
-            .section-text {
-                background: variables.$section-text-color;
-                -webkit-text-fill-color: transparent;
-                -webkit-background-clip: text;
-                background-clip: text;
-                font-family: variables.$font-family-nav ;
-                font-style: variables.$font-style-nav;
-                font-size: 14px;
+
+
+
+
+            .tailored-workflows {
+
+
+                .hr-with-text {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+
+
+                }
+
+                .hr-with-text::before {
+                    content: '';
+
+                    height: 1px;
+
+                    background: variables.$divider-left;
+                    /* Set line color */
+                    margin: 0 10px;
+                    /* Add some space around the text */
+
+                }
+
+                .hr-with-text::after {
+                    content: '';
+
+                    height: 1px;
+
+                    background: variables.$divider-right;
+                    /* Set line color */
+                    margin: 0 10px;
+                    /* Add some space around the text */
+                }
+
+                .hr-with-text::before,
+                .hr-with-text::after {
+                    width: 32px;
+                    flex-grow: 0;
+                }
+
+
+                .hr-with-text span {
+                    white-space: nowrap;
+                    /* Prevent text from wrapping */
+                }
+
+                .section-text {
+                    background: variables.$section-text-color;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    font-family: variables.$font-family-nav ;
+                    font-style: variables.$font-style-nav;
+                    font-size: 14px;
+                }
+
+
+                h2 {
+                    color: variables.$primary-color !important;
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: variables.$secondary-color !important;
+                    line-height: 30px;
+                }
+
             }
+
 
         }
 
+        .cards-section {
+            .card {
+                width: 352px !important;
+                height: 443px !important;
+                background: variables.$card-bg !important;
+                border-radius: 16px !important;
+                padding: 1rem;
+
+            }
+        }
+
+
 
     }
-
-
-
 }
