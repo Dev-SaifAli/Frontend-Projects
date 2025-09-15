@@ -428,4 +428,21 @@ body main .cards-section .card {
   background: linear-gradient(135deg, #111827 0%, rgba(31, 41, 55, 0.4784313725) 54%, rgba(26, 35, 49, 0.6705882353) 70%, #111827) !important;
   border-radius: 16px !important;
   padding: 1rem;
+}
+body main .cards-section .card .illustration {
+  width: 304px;
+  height: 266px;
+}
+body main .cards-section .card .card-badge {
+  display: block;
+  width: 50%;
+  background-color: #1F2937 !important;
+  border-radius: 24px;
+  color: #6366F1 !important;
+}
+body main .cards-section .card p {
+  font-size: 15px !important;
+  margin: 0;
+  padding: 0;
+  line-height: 23px !important;
 }/*# sourceMappingURL=index.css.map */
