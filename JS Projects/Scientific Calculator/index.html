@@ -16,71 +16,89 @@
     <h1>Scientific Calculator</h1>
     <div class="calculator">
         <div class="display">
-            <div><input class="input" type="text" readonly></div>
-            <div><input class="answer" type="text" readonly></div>
+            <div>
+                <h3>Input</h3><input class="input" id="input" type="text" readonly>
+            </div>
+            <div>
+                <h3>Answer</h3><input class="answer" type="text" readonly>
+            </div>
         </div>
 
         <div class="keys">
-            <button>sin</button>
-            <button>cos</button>
-            <button>tan</button>
-            <button class="blue">Deg</button>
-            <button class="blue">Rad</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>&minus;</button>
-            <button class="blue"><i class="material-icons">&#xe14a;</i></button>
+            <!-- Trig Functions -->
+            <button data-func="sin" onclick="handleInput('sin');">sin</button>
+            <button data-func="cos" onclick="handleInput('cos');">cos</button>
+            <button data-func="tan" onclick="handleInput('tan');">tan</button>
+            <button class="blue" onclick="handleInput('Deg');" data-mode="deg">Deg</button>
+            <button class="blue" onclick="handleInput('Rad');" data-mode="rad">Rad</button>
 
-            <button>sin <sup>&minus;1</sup></button>
-            <button>cos<sup>&minus;1</sup></button>
-            <button>tan<sup>&minus;1</sup></button>
-            <button>&pi;</button>
-            <button>&#8495;</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>&plus;</button>
-            <button class="blue">ANS</button>
+            <button data-num="1" onclick="handleInput('1');">1</button>
+            <button data-num="2" onclick="handleInput('2');">2</button>
+            <button data-num="3" onclick="handleInput('3');">3</button>
+            <button data-op="-" onclick="handleInput('−');">&minus;</button>
+            <button class="blue" data-op="back"><i class="material-icons">&#xe14a;</i></button>
 
-            <button>x <sup>y</sup> </button>
-            <button>e <sup>x</sup> </button>
-            <button>x <sup>2</sup> </button>
-            <button>x <sup>3</sup> </button>
-            <button>10 <sup>x</sup> </button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>&sol;</button>
-            <button>M&plus;</button>
-            <button><sup>y</sup>&radic;x</button>
+            <!-- Inverse trig -->
+            <button data-func="asin" onclick="handleInput('sin⁻¹');">sin<sup>-1</sup></button>
+            <button data-func="acos" onclick="handleInput('cos⁻¹');">cos<sup>-1</sup></button>
+            <button data-func="atan" onclick="handleInput('tan⁻¹');">tan<sup>-1</sup></button>
 
+            <!-- Constants -->
+            <button data-const="pi" onclick="handleInput('π');">π</button>
+            <button data-const="e" onclick="handleInput('ℇ');">ℇ</button>
 
+            <!-- Numbers -->
+            <button data-num="4" onclick="handleInput('4');">4</button>
+            <button data-num="5" onclick="handleInput('5');">5</button>
+            <button data-num="6" onclick="handleInput('6');">6</button>
+            <button data-op="+" onclick="handleInput('+');">&plus;</button>
+            <button class="blue" data-op="ans">ANS</button>
 
+            <!-- Powers & exponentials -->
+            <button data-func="pow" onclick="handleInput('1');">x<sup>y</sup></button>
+            <button data-func="exp" onclick="handleInput('1');">e<sup>x</sup></button>
+            <button data-func="square" onclick="handleInput('1');">x<sup>2</sup></button>
+            <button data-func="cube" onclick="handleInput('1');">x<sup>3</sup></button>
+            <button data-func="ten-pow" onclick="handleInput('1');">10<sup>x</sup></button>
 
-            <button>&radic;x</button>
-            <button>&#8731;x</button>
-            <button>ln</button>
-            <button>Log</button>
-            <button>0</button>
-            <button>&CenterDot;</button>
-            <button class="blue">&equals; </button>
-            <button class="blue">&times; </button>
-            <button>M&minus;</button>
+            <!-- Numbers -->
+            <button data-num="7">7</button>
+            <button data-num="8">8</button>
+            <button data-num="9">9</button>
+            <button data-op="/">&sol;</button>
+            <button data-mem="add">M&plus;</button>
+            <button data-func="rooty"><sup>y</sup>&radic;x</button>
 
-            <button>&lpar;</button>
-            <button>&rpar;</button>
-            <button>1/x</button>
-            <button>n!</button>
-            <button>%</button>
-            <button>&plusmn;</button>
-            <button>RND</button>
-            <button class="blue">AC</button>
-            <button class="blue">EXP</button>
-            <button>MR</button>
+            <!-- Roots, logs, decimal -->
+            <button data-func="sqrt">&radic;x</button>
+            <button data-func="cbrt">&#8731;x</button>
+            <button data-func="ln">ln</button>
+            <button data-func="log">Log</button>
+            <button data-num="0">0</button>
+            <button data-num=".">&CenterDot;</button>
+            <button class="blue" data-op="equals">&equals;</button>
+            <button class="blue" data-op="*">&times;</button>
+            <button data-mem="sub">M&minus;</button>
+
+            <!-- Other operations -->
+            <button data-op="(">&lpar;</button>
+            <button data-op=")">&rpar;</button>
+            <button data-func="reciprocal">1/x</button>
+            <button data-func="factorial">n!</button>
+            <button data-func="percent">%</button>
+            <button data-func="negate">&plusmn;</button>
+            <button data-func="rnd">RND</button>
+            <button class="blue" data-op="ac">AC</button>
+            <button class="blue" data-func="expNotation">EXP</button>
+            <button data-mem="recall">MR</button>
         </div>
 
+
     </div>
+
+    <!-- Custom JS -->
+    <script src="./JS/script.js
+     "></script>
 </body>
 
 </html>

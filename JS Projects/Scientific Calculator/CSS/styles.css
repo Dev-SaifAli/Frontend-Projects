@@ -35,7 +35,18 @@ body {
   text-align: right;
   font-size: 1.5rem;
   border: 2px solid #c5c5c5;
-  height: 40px;                         d
+  height: 40px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #c5c5c5;
+}
+
+h3 {
+  margin: 0;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .keys {
@@ -72,4 +83,10 @@ button.wide {
   margin-top: 15px;
   font-size: 14px;
   color: #555;
+}
+
+/* Style applied while the button is being clicked */
+button:active {
+  background-color: rgb(1, 29, 86);
+  transform: translateY(2px); /* Creates a subtle "pressed" effect */
 }
