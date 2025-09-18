@@ -20,7 +20,7 @@
                 <h3>Input</h3><input class="input" id="input" type="text" readonly>
             </div>
             <div>
-                <h3>Answer</h3><input class="answer" type="text" readonly>
+                <h3>Answer</h3><input class="answer" id="answer" type="text" readonly>
             </div>
         </div>
 
@@ -36,7 +36,7 @@
             <button data-num="2" onclick="handleInput('2');">2</button>
             <button data-num="3" onclick="handleInput('3');">3</button>
             <button data-op="-" onclick="handleInput('−');">&minus;</button>
-            <button class="blue" data-op="back"><i class="material-icons">&#xe14a;</i></button>
+            <button class="blue" data-op="back" id="back"><i class="material-icons">&#xe14a;</i></button>
 
             <!-- Inverse trig -->
             <button data-func="asin" onclick="handleInput('sin⁻¹');">sin<sup>-1</sup></button>
@@ -62,10 +62,10 @@
             <button data-func="ten-pow" onclick="handleInput('1');">10<sup>x</sup></button>
 
             <!-- Numbers -->
-            <button data-num="7">7</button>
-            <button data-num="8">8</button>
-            <button data-num="9">9</button>
-            <button data-op="/">&sol;</button>
+            <button data-num="7" onclick="handleInput('7');">7</button>
+            <button data-num="8" onclick="handleInput('8');">8</button>
+            <button data-num="9" onclick="handleInput('9');">9</button>
+            <button data-op="/" onclick="handleInput('/');">&sol;</button>
             <button data-mem="add">M&plus;</button>
             <button data-func="rooty"><sup>y</sup>&radic;x</button>
 
@@ -74,10 +74,10 @@
             <button data-func="cbrt">&#8731;x</button>
             <button data-func="ln">ln</button>
             <button data-func="log">Log</button>
-            <button data-num="0">0</button>
-            <button data-num=".">&CenterDot;</button>
-            <button class="blue" data-op="equals">&equals;</button>
-            <button class="blue" data-op="*">&times;</button>
+            <button data-num="0" onclick="handleInput('0');">0</button>
+            <button data-num="." onclick="handleInput('.');">&CenterDot;</button>
+            <button class="blue" id="eval" data-op="equals">&equals;</button>
+            <button data-op="*" onclick="handleInput('*');">&times;</button>
             <button data-mem="sub">M&minus;</button>
 
             <!-- Other operations -->
@@ -88,7 +88,7 @@
             <button data-func="percent">%</button>
             <button data-func="negate">&plusmn;</button>
             <button data-func="rnd">RND</button>
-            <button class="blue" data-op="ac">AC</button>
+            <button class="blue" onclick="clearInput();" data-op="ac">AC</button>
             <button class="blue" data-func="expNotation">EXP</button>
             <button data-mem="recall">MR</button>
         </div>
