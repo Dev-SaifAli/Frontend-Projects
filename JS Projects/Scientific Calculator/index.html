@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Scientific Calculator</title>
-    <link rel="shortcut icon" href="./Assets/favicon/calculator-solid-full.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./Assets/favicon/calculator-solid-full.png" type="image/x-icon">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./CSS/styles.css
     ">
@@ -35,7 +35,7 @@
             <button data-num="1" onclick="handleInput('1');">1</button>
             <button data-num="2" onclick="handleInput('2');">2</button>
             <button data-num="3" onclick="handleInput('3');">3</button>
-            <button data-op="-" onclick="handleInput('−');">&minus;</button>
+            <button data-op="−" onclick="handleInput('−');">&minus;</button>
             <button class="blue" data-op="back" id="back"><i class="material-icons">&#xe14a;</i></button>
 
             <!-- Inverse trig -->
@@ -52,7 +52,7 @@
             <button data-num="5" onclick="handleInput('5');">5</button>
             <button data-num="6" onclick="handleInput('6');">6</button>
             <button data-op="+" onclick="handleInput('+');">&plus;</button>
-            <button class="blue" data-op="ans">ANS</button>
+            <button class="blue" data-op="ans" id="ans">ANS</button>
 
             <!-- Powers & exponentials -->
             <button data-func="pow" onclick="handleInput('1');">x<sup>y</sup></button>
@@ -81,14 +81,14 @@
             <button data-mem="sub">M&minus;</button>
 
             <!-- Other operations -->
-            <button data-op="(">&lpar;</button>
-            <button data-op=")">&rpar;</button>
+            <button data-op="(" onclick='handleInput("&#40;")' ;">&lpar;</button>
+            <button data-op=")" onclick="handleInput('&#41;');">&rpar;</button>
             <button data-func="reciprocal">1/x</button>
             <button data-func="factorial">n!</button>
             <button data-func="percent">%</button>
             <button data-func="negate">&plusmn;</button>
             <button data-func="rnd">RND</button>
-            <button class="blue" onclick="clearInput();" data-op="ac">AC</button>
+            <button class="blue" onclick="clearInput();" data-op="ac" id="ac">AC</button>
             <button class="blue" data-func="expNotation">EXP</button>
             <button data-mem="recall">MR</button>
         </div>

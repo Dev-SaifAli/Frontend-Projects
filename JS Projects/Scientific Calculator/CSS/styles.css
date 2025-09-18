@@ -38,6 +38,8 @@ body {
   height: 40px;
 }
 
+
+
 input:focus {
   outline: none;
   border: 2px solid #c5c5c5;
@@ -86,7 +88,7 @@ button.wide {
 }
 
 /* Style applied while the button is being clicked */
-button:active {
+button:-ms-keyboard-active {
   background-color: rgb(1, 29, 86);
   transform: translateY(2px); /* Creates a subtle "pressed" effect */
 }
