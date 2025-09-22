@@ -17,10 +17,10 @@
     <div class="calculator">
         <div class="display">
             <div>
-                <h3>Input</h3><input class="input" id="input" type="text" readonly>
+                <h3>Input</h3><input class="input" id="input" type="text" disabled>
             </div>
             <div>
-                <h3>Answer</h3><input class="answer" id="answer" type="text" readonly>
+                <h3>Answer</h3><input class="answer" id="answer" type="text" disabled>
             </div>
         </div>
 
@@ -29,10 +29,11 @@
             <button data-func="sin" onclick="handleInput('sin');">sin</button>
             <button data-func="cos" onclick="handleInput('cos');">cos</button>
             <button data-func="tan" onclick="handleInput('tan');">tan</button>
-            <button class="blue" onclick="handleInput('Deg');" data-mode="deg">Deg</button>
-            <button class="blue" onclick="handleInput('Rad');" data-mode="rad">Rad</button>
+            <button class="blue selected" onclick=" toggleMode('deg');  " data-mode="deg">Deg</button>
+            <button class="blue" onclick=" toggleMode('rad');" data-mode="rad">Rad</button>
 
-            <button data-num="1" onclick="handleInput('1');">1</button>
+
+            <button data-num="1" onclick="handleNumber(1);">1</button>
             <button data-num="2" onclick="handleInput('2');">2</button>
             <button data-num="3" onclick="handleInput('3');">3</button>
             <button data-op="−" onclick="handleInput('−');">&minus;</button>
@@ -97,8 +98,7 @@
     </div>
 
     <!-- Custom JS -->
-    <script src="./JS/script.js
-     "></script>
+    <script src="./JS/new-script.js"></script>
 </body>
 
 </html>

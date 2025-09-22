@@ -118,7 +118,16 @@ const showInput = (value) => {
   }
 
   // 5. Special Functions (example: sin, cos, log)
-  const functions = ["sin", "cos", "tan", "log", "sqrt"];
+  const functions = [
+    "sin",
+    "cos",
+    "tan",
+    "log",
+    "sqrt",
+    "sin⁻¹",
+    "cos⁻¹",
+    "tan⁻¹",
+  ];
   if (functions.includes(value)) {
     expression += value + "(";
     document.getElementById("input").value = expression;
@@ -234,30 +243,75 @@ document.getElementById("ac").addEventListener("click", () => {
 
 // ---------------- Trigonometry functions -----------------
 
+let angleMode = "deg"; // default mode
+function toggleMode(mode) {
+  angleMode = mode; // update global mode
+
+  // toggle button UI
+  document.querySelectorAll("button[data-mode]").forEach((btn) => {
+    btn.classList.remove("selected");
+  });
+  document
+    .querySelector(`button[data-mode="${mode}"]`)
+    .classList.add("selected");
+
+  // update indicator in input field
+  let inputField = document.getElementById("input");
+  inputField.setAttribute("placeholder", `Mode: ${mode.toUpperCase()}`);
+}
 function handleFunction() {
   let output;
   try {
-    let fixedExpression = expression
-      .replace(/sin/g, "Math.sin")
-      .replace(/cos/g, "Math.cos")
-      .replace(/tan/g, "Math.tan")
-      .replace(/log/g, "Math.log")
-      .replace(/sqrt/g, "Math.sqrt");
+    // let fixedExpression = expression
+    //   .replace(/sin/g, "Math.sin")
+    //   .replace(/cos/g, "Math.cos")
+    //   .replace(/tan/g, "Math.tan")
+    //   .replace(/log/g, "Math.log")
+    //   .replace(/sqrt/g, "Math.sqrt");
+    // match common functions, longer names first so 'asin' is picked before 'sin'
 
-    // convert to radians if needed
+    expression = expression
+      .replace(/sin⁻¹/g, "asin")
+      .replace(/cos⁻¹/g, "acos")
+      .replace(/tan⁻¹/g, "atan");
+
+    // Match trig + log + sqrt
+    const funcRegex = /\b(asin|acos|atan|sin|cos|tan|log|sqrt)(?=\s*\()/g;
+
+    // Add Math. prefix
+    let fixedExpression = expression.replace(funcRegex, "Math.$1");
+
+    if (angleMode === "deg") {
+      // For sin, cos, tan -> convert input to radians
+      fixedExpression = fixedExpression.replace(
+        /Math\.sin\((.*?)\)/g,
+        "Math.sin(($1) * Math.PI / 180)"
+      );
+      fixedExpression = fixedExpression.replace(
+        /Math\.cos\((.*?)\)/g,
+        "Math.cos(($1) * Math.PI / 180)"
+      );
+      fixedExpression = fixedExpression.replace(
+        /Math\.tan\((.*?)\)/g,
+        "Math.tan(($1) * Math.PI / 180)"
+      );
+    }
+
+    // For asin, acos, atan -> convert output from radians to degrees
     fixedExpression = fixedExpression.replace(
-      /Math\.sin\((.*?)\)/g,
-      "Math.sin(($1) * Math.PI / 180)"
+      /Math\.asin\((.*?)\)/g,
+      "(Math.asin($1) * 180 / Math.PI)"
     );
     fixedExpression = fixedExpression.replace(
-      /Math\.cos\((.*?)\)/g,
-      "Math.cos(($1) * Math.PI / 180)"
+      /Math\.acos\((.*?)\)/g,
+      "(Math.acos($1) * 180 / Math.PI)"
     );
     fixedExpression = fixedExpression.replace(
-      /Math\.tan\((.*?)\)/g,
-      "Math.tan(($1) * Math.PI / 180)"
+      /Math\.atan\((.*?)\)/g,
+      "(Math.atan($1) * 180 / Math.PI)"
     );
 
+    console.log(fixedExpression);
     output = eval(fixedExpression);
 
     lastResult = output;
@@ -272,7 +326,8 @@ function handleFunction() {
   if (Number.isInteger(output)) {
     showOutput(output);
   } else {
-    output = output.toFixed(1); 
+    output = output.toFixed(1);
+    console.log(output);
     showOutput(output);
   }
 }

@@ -1,20 +1,32 @@
+@font-face {
+  font-family: calculator;
+  src: url(/Assets/fonts/Nacelle-Regular.otf);
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
+  font-family: "calculator", Courier, monospace;
+  /* background-image: url(/Assets/images/bg.jpg); */
+  /* background-repeat: no-repeat; */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  max-height: 100vh;
   flex-direction: column;
 }
 
+h1 {
+  color: #121212;
+}
+
 .calculator {
-  background: #fff;
+  background-color: #eaeaea;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 80%;
-
+  box-shadow: 0px 4px 100px #a9a9a9;
   border: 1px solid #121212;
 }
 
@@ -27,23 +39,22 @@ body {
 
 .input,
 .answer {
-  background: #f1f1f1;
+  /* background: #eaeaea; */
+  opacity: 0.5;
   padding: 10px;
   border-radius: 8px;
   flex: 1;
   margin: 0 10px;
   text-align: right;
   font-size: 1.5rem;
-  border: 2px solid #c5c5c5;
+  border: 2px solid #212121;
   height: 40px;
 }
 
-
-
-input:focus {
+/* input:focus {
   outline: none;
-  border: 2px solid #c5c5c5;
-}
+  border: 2px solid #212121;
+} */
 
 h3 {
   margin: 0;
@@ -59,7 +70,8 @@ h3 {
 }
 
 button {
-  background: #f7f7f7;
+  color: white;
+  background-color: #121212;
   border: none;
   padding: 12px;
   font-size: 1.5rem;
@@ -69,16 +81,21 @@ button {
 }
 
 button:hover {
-  background: #eaeaea;
+  background: #270d02;
 }
 
 button.blue {
-  background: #0066ff;
+  background: #dc143c;
   color: white;
 }
 
 button.wide {
   grid-column: span 2;
+}
+
+button.selected{
+  background-color: #007bff;
+  color: white;
 }
 
 .footer {
