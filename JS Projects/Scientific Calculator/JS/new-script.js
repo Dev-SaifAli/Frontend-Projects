@@ -29,6 +29,13 @@ function handleInput(value) {
     return;
   }
 
+  // ✅ Agar abhi input khali hai aur operator press hua
+  if (expression === "" && ["+", "−", "×", "÷", "*", "/"].includes(value)) {
+    expression = lastResult.toString() + value;
+    updateInput();
+    return;
+  }
+
   // Special handling for different input types
   switch (value) {
     case "sin⁻¹":
@@ -78,16 +85,27 @@ function handleNumber(num) {
 }
 
 // Enhanced validation function
+
 function validateInput(value, lastChar) {
   const operators = ["+", "−", "*", "/", "×", "÷"];
 
+  // Single operator display
+
+  if (expression === "" && operators.includes(value)) {
+    expression = "0" + value;
+    console.log(expression);
+    console.log("single operator display");
+    updateInput();
+    return;
+  }
+
   // Prevent consecutive operators
   if (operators.includes(lastChar) && operators.includes(value)) {
-    if (value === "-" && lastChar !== "-") {
-      // Allow negative numbers after operators (except after another minus)
-      return true;
-    }
-    return false;
+    console.log("Prevent consecutive operators");
+    expression = expression.slice(0, -1) + value;
+    console.log(expression);
+    updateInput();
+    return;
   }
 
   // Decimal point validation
@@ -243,8 +261,9 @@ function evaluateExpression() {
     }
 
     showOutput(formattedResult);
-    expression = formattedResult;
-    updateInput();
+    // expression = formattedResult;
+    // updateInput();
+    clearInput();
   } catch (error) {
     handleError(error.message);
   }

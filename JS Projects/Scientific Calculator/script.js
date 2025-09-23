@@ -1,14 +1,3 @@
-document.querySelectorAll("button").forEach((btn) => {
-  //   btn.addEventListener("click", () => {
-  //     if (btn.dataset.num) handleNumber(btn.dataset.num);
-  //     if (btn.dataset.op) handleOperator(btn.dataset.op);
-  //     if (btn.dataset.func) handleFunction(btn.dataset.func);
-  //     if (btn.dataset.const) handleConstant(btn.dataset.const);
-  //     if (btn.dataset.mem) handleMemory(btn.dataset.mem);
-  //     if (btn.dataset.mode) setAngleMode(btn.dataset.mode);
-  //   });
-});
-
 document.addEventListener("keydown", handleKeyPress);
 function handleKeyPress(event) {
   const key = event.key;
@@ -42,16 +31,16 @@ function handleKeyPress(event) {
 
 // let userInput = [];
 
-//-------------- Clear Input ---------------------
-const clearInput = () => {
-  document.getElementById("input").value = "";
-};
+// //-------------- Clear Input ---------------------
+// const clearInput = () => {
+//   document.getElementById("input").value = "";
+// };
 
 //-------------- Clear Output ---------------------
-const clearOutput = () => showOutput("0");
+// const clearOutput = () => showOutput("0");
 
 //-------------- Show Input ---------------------
-let lastResult = "";
+// let lastResult = "";
 
 let expression = "";
 const operators = ["+", "−", "*", "/"];
