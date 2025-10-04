@@ -39,16 +39,14 @@ h1 {
 
 .input,
 .answer {
-  /* background: #eaeaea; */
-  opacity: 0.5;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   flex: 1;
   margin: 0 10px;
   text-align: right;
   font-size: 1.5rem;
-  border: 2px solid #212121;
   height: 40px;
+  color: black;
 }
 
 /* input:focus {
@@ -93,7 +91,7 @@ button.wide {
   grid-column: span 2;
 }
 
-button.selected{
+button.selected {
   background-color: #007bff;
   color: white;
 }

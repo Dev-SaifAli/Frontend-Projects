@@ -32,6 +32,7 @@ function handleInput(value) {
   // ✅ Agar abhi input khali hai aur operator press hua
   if (expression === "" && ["+", "−", "×", "÷", "*", "/"].includes(value)) {
     expression = lastResult.toString() + value;
+    console.log(expression);
     updateInput();
     return;
   }
@@ -92,7 +93,8 @@ function validateInput(value, lastChar) {
   // Single operator display
 
   if (expression === "" && operators.includes(value)) {
-    expression = "0" + value;
+    // expression = "0" + value;
+    expression = lastResult + value;
     console.log(expression);
     console.log("single operator display");
     updateInput();
@@ -107,6 +109,30 @@ function validateInput(value, lastChar) {
     updateInput();
     return;
   }
+
+  // Leading 0 replacement
+  /*   \d ka matlab hai digit (0 se 9 tak koi bhi number).
+      /\d/ ek regex object hai jo check karega ke string ke andar koi digit hai ya nahi.*/
+
+  /* .test(value)
+
+Regex ka .test() method hota hai jo true ya false return karta hai.
+
+Agar value ek digit (0–9) hai → true.
+
+Agar value digit nahi hai (jaise +, -, ., etc.) → false. */
+
+  // if (expression === "3") {
+  //   if (/\d/.test(value)) {
+  //     // replace 0 with new digit
+  //     expression = ;
+  //   } else {
+  //     // allow operator after 0
+  //     expression += value;
+  //   }
+  // }
+
+  // updateInput();
 
   // Decimal point validation
   if (value === ".") {
@@ -261,12 +287,18 @@ function evaluateExpression() {
     }
 
     showOutput(formattedResult);
+
     // expression = formattedResult;
     // updateInput();
     clearInput();
   } catch (error) {
     handleError(error.message);
   }
+}
+
+function activeOutput() {
+  outputElement.removeAttribute("disabled");
+  return;
 }
 
 // Preprocess expression for evaluation
@@ -281,7 +313,6 @@ function preprocessExpression(expr) {
       // Replace constants
       .replace(/π/g, Math.PI.toString())
       .replace(/ℇ/g, Math.E.toString())
-      .replace(/e/g, Math.E.toString())
 
       // Replace functions with Math equivalents
       .replace(/sin⁻¹/g, "asin")
@@ -468,6 +499,7 @@ function handleKeyPress(event) {
   // Equals
   else if (key === "=" || key === "Enter") {
     evaluateExpression();
+    activeOutput();
   }
   // Clear
   else if (key === "Escape" || key === "c" || key === "C") {
