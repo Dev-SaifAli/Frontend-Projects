@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Form Container -->
+    <div class="container">
+        <h1>Form Validator</h1>
+        <!-- Form Fields-->
+        <form id="form" autocomplete="off">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" minlength="3" class="validate"
+                required>
+            <p id="nameValidation"></p>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" class="validate" required>
+            <p id="emailValidation"></p>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Enter your password" class="validate"
+                required>
+            <p id="passwordValidation"></p>
+
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Re-enter your password"
+                class="validate">
+            <p id="confirmValidation"></p>
+
+            <button type="submit" id="sumbitBtn">Submit</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+
+</html>
