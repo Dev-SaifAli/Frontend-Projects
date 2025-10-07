@@ -10,13 +10,6 @@ let emailValidation = document.getElementById("emailValidation");
 
 let input = document.querySelectorAll("input");
 
-// // Constructor Function
-// function User(userName, userEmail, userPassword) {
-//   this.user = userName;
-//   this.email = userEmail;
-//   this.password = userPassword;
-// }
-
 input.forEach((element) => {
   element.classList.remove("validate");
 });
@@ -57,19 +50,22 @@ function verifyEmail() {
     emailValidation.style.color = "green";
     email.classList.add("validate");
   } else {
-    emailValidation.innerText = "❌ InValid Email.";
+    emailValidation.innerText = "❌ Invalid Email.";
     emailValidation.style.color = "red";
   }
 }
 email.addEventListener("input", verifyEmail);
 
 function verifyName() {
-  if (name.value.trim().length < 3) {
-    nameValidation.innerText = "At-least 3 characters.";
-    nameValidation.style.color = "red";
-  } else {
-    nameValidation.innerText = "";
+  const nameRegex = /^[A-Za-z\s]{3,}$/;
+  if (nameRegex.test(name.value)) {
+    nameValidation.innerText = "✅ Valid";
+    nameValidation.style.color = "green";
     name.classList.add("validate");
+  } else {
+    nameValidation.innerText = "❌ Invalid";
+    nameValidation.style.color = "red";
+    name.classList.remove("validate");
   }
 }
 name.addEventListener("input", verifyName);
@@ -90,8 +86,37 @@ function formDetails() {
   Object.fromEntries() then transforms these pairs into a new JavaScript object,
    where the field names become the keys and their values become the corresponding value
     in the object. */
+
   const formObject = Object.fromEntries(formData.entries());
   console.log(formObject);
 }
 
 document.getElementById("sumbitBtn").addEventListener("click", formDetails);
+
+function showPassword() {
+  const input = this.previousElementSibling;
+  if (input.type === "password") {
+    console.log(input.type);
+    input.setAttribute("type", "text");
+    console.log(input.type);
+
+    this.querySelector("i").classList.add("fa-eye");
+    this.querySelector("i").classList.remove("fa-eye-slash");
+  } else {
+    console.log("else icon");
+    input.setAttribute("type", "password");
+    
+
+    this.querySelector("i").classList.remove("fa-eye");
+    this.querySelector("i").classList.add("fa-eye-slash");
+  }
+}
+
+document.querySelectorAll("#togglePassword").forEach((icon) => {
+  icon.addEventListener("click", showPassword);
+});
+
+// password.type = number;
+
+// document.getElementById("togglePassword").innerHTML =
+//   "<i class='fa fa-eye'></i>"; we can replace it with

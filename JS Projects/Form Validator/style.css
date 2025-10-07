@@ -12,21 +12,22 @@ body {
   height: 100%;
   font-family: "Quicksand", sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background: radial-gradient(circle at center, #00c6ff, #0072ff); */
+  background: radial-gradient(circle at center, #41f400, #00f198);
 }
 
 .container {
-  width: 40%;
-  height: 75%;
-  box-shadow: 0px 4px 100px #d1d1d1;
+  width: 50%;
+  height: auto;
+  /* box-shadow: 0px 4px 100px #d1d1d1;
   background-color: rgba(255, 255, 255, 0.4);
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); */
+  background-color: transparent;
+  /* backdrop-filter: blur(5px); */
   border-radius: 1.5rem;
   padding: 1.5rem;
-  position: relative;
 }
 
 h1 {
@@ -45,8 +46,9 @@ button {
 
 input {
   padding: 0.5rem;
-  width: 90%;
+  width: 100%;
   border: 2px solid #121221;
+
   outline: none;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -59,10 +61,7 @@ input:focus {
 button {
   padding: 0.5rem;
   margin-top: 0.5rem;
-  position: absolute;
-  right: 5rem;
   border: 2px solid #ccc;
-  /* border-radius: 1rem; */
   background-color: #121212;
   color: white;
   transition: background-color 0.2s ease, border-color 0.2s ease;
@@ -77,13 +76,32 @@ button:active {
 }
 
 input.validate {
-  border-color: lime;
-  box-shadow: 0 0 5px limegreen;
+  border-color: limegreen;
 }
+
+p {
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
 label {
   font-weight: 500;
 }
-p {
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+
+.password-container {
+  display: flex;
+  align-items: center;
+  gap:4px
 }
+
+/* #Password {
+  padding-right: 2.5rem 
+} */
+/* 
+.password-toggle-icon {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  cursor: pointer;
+} */

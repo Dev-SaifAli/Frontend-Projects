@@ -342,3 +342,6 @@ try {
 } catch (error) {
   console.error("An error occurred:", error.message);
 }
+
+ var result = "Hello".indexOf('1');
+ console.log(result);
