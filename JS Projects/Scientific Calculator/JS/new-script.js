@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleInput(value) {
   if (isErrorState) {
     clearError();
+    
   }
 
   const lastChar = expression.slice(-1);
@@ -318,9 +319,6 @@ function preprocessExpression(expr) {
       .replace(/sin⁻¹/g, "asin")
       .replace(/cos⁻¹/g, "acos")
       .replace(/tan⁻¹/g, "atan")
-      .replace(/sin/g, "sin")
-      .replace(/cos/g, "cos")
-      .replace(/tan/g, "tan")
       .replace(/log/g, "log10")
       .replace(/ln/g, "log")
       .replace(/√/g, "sqrt")
@@ -413,7 +411,7 @@ function handleMemory(operation) {
         break;
       case "recall":
         expression += memory.toString();
-        updateInput();
+        showOutput(expression);
         break;
     }
   } catch (error) {
