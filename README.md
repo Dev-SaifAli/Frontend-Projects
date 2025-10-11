@@ -2,3 +2,4 @@
 ## Digital Clock 🕛
 ## Color Flipper 🏳️‍🌈
 ## Form Validator ❌✅
+## Image Slider 🖼️
